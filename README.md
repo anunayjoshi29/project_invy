@@ -56,7 +56,7 @@
 }
         - statuscode: 401, 422
             - error:<unauthorized error/unprocessable entity> 
-- PATCH http://localhost:3000/api/v1/schedules/{schedule_id} (permission: admin)
+- PATCH http://localhost:3003/api/v1/schedules/{schedule_id} (permission: admin)
     -   This is the update schedule api
     -   headers
         -   Authorization:Bearer <jwt>
