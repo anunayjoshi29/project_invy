@@ -6,7 +6,7 @@ if [ -f tmp/pids/server.pid ]; then
   rm tmp/pids/server.pid
 fi
 echo "starting db migrate"
-sleep 5
+sleep 30
 bin/rails db:create
 rails generate after_party:install
 rake db:migrate
