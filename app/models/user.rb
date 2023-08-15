@@ -14,7 +14,7 @@ class User < ApplicationRecord
     end
   
     def find_accumulated_work_hours(from_date, end_date)
-      schedules_within_range = schedules.where(work_date: from_date..end_date)
+      schedules_within_range = schedules.where(workdate: from_date..end_date)
       total_work_hours = schedules_within_range.sum(&:shift_length_hours)
       total_work_hours
     end
@@ -40,7 +40,7 @@ class User < ApplicationRecord
     end
   
     def get_schedule(from_date, end_date)
-      schedules.where(work_date: from_date..end_date)
+      schedules.where(workdate: from_date..end_date)
     end
 
     private

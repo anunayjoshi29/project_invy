@@ -100,8 +100,7 @@ module Api
       end
 
       def schedule_params
-        # params.require(:schedule).permit(:work_date, :user_id, :shift_length_hours)
-        params.require(:schedule)
+        params.require(:schedule).permit(:workdate, :user_id, :shift_length_hours)
       end
 
       def date_validate
