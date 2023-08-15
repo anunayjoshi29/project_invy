@@ -1,0 +1,31 @@
+---
+services:
+  app:
+    build:
+      context: "."
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+    env_file: .env
+    environment:
+      RAILS_ENV: development
+    ports:
+      - "3003:3003"
+    volumes:
+      - ".:/app"
+  db:
+    platform: linux/x86_64
+    image: "mysql:5.7"
+    env_file: .env
+    expose:
+      - "3306"
+    logging:
+      driver: none
+    ports:
+      - "3306:3306"
+    restart: always
+    volumes:
+      - "db:/var/run/mysqld"
+version: "3.4"
+volumes:
+  db:
