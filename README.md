@@ -10,9 +10,9 @@
     -   payload:
        {
             "user": {
-                "name": "{name}",
-                "email": "{email}",
-                "password": "{password}"
+                "name":,
+                "email":,
+                "password":
                 }
         }
     - Response:
@@ -25,8 +25,8 @@
     -   The token received through this api is required in header as a Bearer token for every further api to uthenticate and authorize a user
     -   payload:
        {
-                "email": "{email}",
-                "password": "{password}"
+                "email":,
+                "password":
         }
     - Response:
         - statuscode: 200
@@ -40,9 +40,9 @@
         -   Content-Type: application/json
     -   payload:
        {
-              "workdate": "2023-07-12",
-              "user_id": 14,
-              "shift_length_hours": 2
+              "workdate":,
+              "user_id":,
+              "shift_length_hours":
         }
     - Response:
         - statuscode: 201
@@ -63,9 +63,9 @@
         -   Content-Type: application/json
     -   payload:
 {
-  "workdate": "2023-07-12",
-  "user_id": 8,
-  "shift_length_hours": 2
+  "workdate":,
+  "user_id":,
+  "shift_length_hours":
 }
 
     - Response:
@@ -166,7 +166,7 @@
         - statuscode: 200
             - [
     {
-        "id": 3,
+        "id":,
         "work_date":,
         "shift_length_hours":,
         "user_id":,
@@ -174,7 +174,7 @@
         "updated_at":
     },
     {
-        "id": 4,
+        "id":,
         "work_date":,
         "shift_length_hours":,
         "user_id":,
