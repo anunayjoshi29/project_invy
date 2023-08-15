@@ -8,6 +8,7 @@ gem "cancancan"
 gem "jwt"
 gem "byebug"
 gem "mysql2"
+gem "after_party"
 # gem 'tzinfo-data'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.7"

@@ -9,7 +9,6 @@ module Api
       end
 
       def create
-        byebug
         @user = User.new(user_params)
         if @user.save
           render json: { message: 'User created successfully' }, status: :created
@@ -65,7 +64,6 @@ module Api
       end
 
       def user_params
-        byebug
         params.require(:user).permit(:email, :password, :role)
         # params.require(:user)
         # byebug

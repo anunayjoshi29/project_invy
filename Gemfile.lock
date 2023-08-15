@@ -68,6 +68,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    after_party (1.11.2)
     bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
