@@ -5,6 +5,13 @@
 ## Running
     docker-compose up
 ## Endpoints
+- GET http://127.0.0.1:3003/health
+    -   This is the health check api for the app
+    - Response:
+        - statuscode: 200
+            - status: "Server is up"
+        - statuscode: 503
+            - status: <error message>
 - POST http://127.0.0.1:3003/api/v1/signup
     -   This is the entry point for a user
     -   payload:
