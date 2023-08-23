@@ -5,22 +5,6 @@ module Api
       before_action :set_schedule, only: %i[update destroy]
       before_action :date_validate, only: %i[order_by_accumulated_hours get_schedule]
 
-      def index
-        @schedules = Schedule.all
-        render json: @schedules
-      end
-
-      def show
-        @user = User.find(params[:user_id])
-        @schedule = @user.schedules
-
-        if @schedule
-          render json: @schedule
-        else
-          render json: { error: 'Schedule not found' }, status: :not_found
-        end
-      end
-
       def create
         authorize! :manage, @user
         @schedule = Schedule.new(schedule_params)
@@ -46,23 +30,23 @@ module Api
         render json: { message: 'Schedule deleted' }, status: :ok
       end
 
-      def work_hours_by_period
-        authorize! :manage, @user
-        user = @current_user
-        coworkers = User.where.not(id: user.id)
-        schedules = Schedule.where(user: coworkers)
-        render json: schedules
-      end
+      # def work_hours_by_period
+      #   authorize! :manage, @user
+      #   user = @current_user
+      #   coworkers = User.where.not(id: user.id)
+      #   schedules = Schedule.where(user: coworkers)
+      #   render json: schedules
+      # end
 
-      def coworker_schedule
-        user = User.find(params[:user_id])
-        schedule = user.schedules # Assuming a one-to-one relationship between User and Schedule
-        if schedule
-          render json: schedule
-        else
-          render json: { error: 'Schedule not found for the user' }, status: :not_found
-        end
-      end
+      # def coworker_schedule
+      #   user = User.find(params[:user_id])
+      #   schedule = user.schedules # Assuming a one-to-one relationship between User and Schedule
+      #   if schedule
+      #     render json: schedule
+      #   else
+      #     render json: { error: 'Schedule not found for the user' }, status: :not_found
+      #   end
+      # end
 
       def order_by_accumulated_hours
         authorize! :manage, @user
